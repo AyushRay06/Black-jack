@@ -8,6 +8,15 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
+let player = {
+    name : "Ayush Ray",
+    chip : 145
+}
+ 
+
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = player.name + ": $" + player.chip
+console.log(playerEl)
 console.log(cards)
 
 //for generating random Card
@@ -51,10 +60,13 @@ function renderGame(){
 }
 
 function newCard(){
-    let card = getRendomCard();
-    sum += card
-    cards.push(card)
-    renderGame();
+    if(isAlive === true && hasBlackJack ===false){
+        let card = getRendomCard();
+        sum += card
+        cards.push(card)
+        renderGame(); 
+    }
+    
 }
 
 
